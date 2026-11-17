@@ -15,3 +15,17 @@ const titles={overview:'Dashboard Overview',customers:'Customer Master',inventor
 document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav,.view').forEach(el=>el.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.view).classList.add('active');document.querySelector('#pageTitle').textContent=titles[b.dataset.view]}));
 document.querySelector('#role').addEventListener('change',e=>{const admin=e.target.value==='admin';document.querySelector('[data-view="admin"]').style.display=admin?'':'none';if(!admin&&document.querySelector('#admin').classList.contains('active'))document.querySelector('[data-view="overview"]').click();document.querySelector('#notice').textContent='This is a '+(admin?'admin':'employee')+' UI preview only. Role selection is NOT authentication or access control.'});
 document.querySelector('#search').addEventListener('input',e=>renderParties(e.target.value));renderMetrics();renderParties();renderTables();
+
+// Month-wise preview. Replace these sample rows with authenticated Google Sheets data.
+// Part Number Sales currently shows distinct sold part numbers (SKU count).
+const monthlyDemo=[
+ {month:'Apr-2026',sales:78871861.61,budget:80000000,zero:12,customers:2691,parts:6781},
+ {month:'May-2026',sales:82951268.95,budget:85000000,zero:9,customers:2580,parts:6392},
+ {month:'Jun-2026',sales:75572553.81,budget:79000000,zero:15,customers:2547,parts:6831},
+ {month:'Jul-2026',sales:67429424.65,budget:75000000,zero:18,customers:2495,parts:6617}
+];
+function renderMonthly(){
+ const labels=[['Sales',m=>rupees(m.sales)],['Total Budget',m=>rupees(m.budget)],['0 Sales Report',m=>m.zero.toLocaleString('en-IN')],['Total Customer',m=>m.customers.toLocaleString('en-IN')],['Avg Sales',m=>rupees(m.customers?m.sales/m.customers:0)],['Part Number Sales',m=>m.parts.toLocaleString('en-IN')]];
+ document.querySelector('#monthlyCards').innerHTML=monthlyDemo.map((m,i)=>`<article class="month-card month-${i%4}"><h3>${m.month}</h3>${labels.map(([label,fn])=>`<div class="month-row"><span>${label}</span><strong>${fn(m)}</strong></div>`).join('')}</article>`).join('');
+}
+renderMonthly();
