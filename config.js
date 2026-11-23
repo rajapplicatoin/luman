@@ -1,3 +1,4 @@
-// Optional: public READ-ONLY demonstration Google Apps Script endpoint.
-// Leave blank for sample data. Never put passwords, API secrets, or private data here.
-window.LUMAN_CONFIG = { PUBLIC_DEMO_SHEET_API_URL: '' };
+// Paste ONLY the existing owner-only Apps Script Web App URL here.
+// Never publish a Sheet, password, token, or unrestricted data API.
+// Example: https://script.google.com/macros/s/DEPLOYMENT_ID/exec
+window.LUMAN_CONFIG = { PRIVATE_APPS_SCRIPT_URL: '' };
