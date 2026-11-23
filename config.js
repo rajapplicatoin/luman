@@ -1,4 +1,2 @@
-// Paste ONLY the existing owner-only Apps Script Web App URL here.
-// Never publish a Sheet, password, token, or unrestricted data API.
-// Example: https://script.google.com/macros/s/DEPLOYMENT_ID/exec
-window.LUMAN_CONFIG = { PRIVATE_APPS_SCRIPT_URL: '' };
+// Existing private Apps Script web app. This is a link, not a public data API.
+window.LUMAN_CONFIG = { PRIVATE_APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyR0KCseB2mcWQx4yq-JTSuQE9tuNC0ETncmeGfDVVLTuzp66h-5qOHfyKb83NgERFr/exec' };
