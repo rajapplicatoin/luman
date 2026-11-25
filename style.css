@@ -2,3 +2,5 @@
 .live-link{display:inline-block;background:#244b9a;color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin:10px 0}.live-link:hover{background:#17356f}.live-link[hidden]{display:none}
 
 .live-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.live-actions .live-link{margin:0}.live-frame{display:block;width:100%;min-height:780px;border:1px solid #d9e2ef;border-radius:10px;background:#fff}.embed-note{padding:10px 12px;margin-bottom:12px;background:#fff8e9;color:#725119;border-radius:8px;font-size:12px}@media(max-width:800px){.live-frame{min-height:650px}.live-actions{width:100%}}
+
+[hidden]{display:none!important}.login-panel{max-width:420px;margin:10vh auto;padding:28px;background:white;border-radius:16px;box-shadow:0 8px 30px #17263c18}.login-panel form{display:grid;gap:12px}.login-panel input{width:100%;padding:12px}.login-panel button{padding:12px;background:#3973ed;color:white;border:0;border-radius:8px;cursor:pointer}
